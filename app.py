@@ -8,7 +8,8 @@ queue_manager = QueueManager()
 @app.route("/")
 def home():
     queue = queue_manager.get_queue()
-    return render_template("index.html", queue=queue)
+    seen = queue_manager.patients_seen
+    return render_template("index.html", queue=queue, seen=seen)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
