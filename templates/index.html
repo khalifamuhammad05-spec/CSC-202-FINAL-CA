@@ -11,7 +11,7 @@
 
 <ol>
 {% for patient in queue %}
-<li>{{ patient.name }} - {{ patient.time_registered }}</li>
+<li>{{ patient.name }} - {{ patient.get_time() }}</li>
 {% endfor %}
 </ol>
 
