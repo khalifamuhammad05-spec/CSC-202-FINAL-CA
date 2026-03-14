@@ -9,13 +9,19 @@
 
 <h2>Current Queue</h2>
 
-<ul>
+<ol>
 {% for patient in queue %}
 <li>{{ patient.name }} - {{ patient.time_registered }}</li>
 {% endfor %}
-</ul>
+</ol>
 
 <a href="/register">Register New Patient</a>
+
+<br><br>
+
+<a href="/next">
+    <button>Call Next Patient</button>
+</a>
 
 </body>
 </html>

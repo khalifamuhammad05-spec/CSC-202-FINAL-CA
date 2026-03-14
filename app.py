@@ -18,5 +18,10 @@ def register():
         return redirect("/")
     return render_template("register.html")
 
+@app.route("/next")
+def next_patient():
+    queue_manager.next_patient()
+    return redirect("/")
+
 if __name__ == "__main__":
     app.run(debug=True)
