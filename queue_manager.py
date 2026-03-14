@@ -7,8 +7,8 @@ class QueueManager:
         self.patients_seen = 0
 
     def add_patient(self, name):
-        Patient = Patient(name)
-        self.queue.append(Patient)
+        patient = Patient(name)
+        self.queue.append(patient)
 
     def next_patient(self):
         if self.queue:

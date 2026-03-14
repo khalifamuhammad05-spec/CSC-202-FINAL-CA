@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clinic Queue Manager</title>
+</head>
+<body>
+
+<h1>Clinic Queue Manager</h1>
+
+<h2>Current Queue</h2>
+
+<ul>
+{% for patient in queue %}
+<li>{{ patient.name }} - {{ patient.time_registered }}</li>
+{% endfor %}
+</ul>
+
+<a href="/register">Register New Patient</a>
+
+</body>
+</html>
