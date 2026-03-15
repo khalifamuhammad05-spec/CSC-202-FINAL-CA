@@ -10,11 +10,11 @@
  <h2>Patients Seen Today: {{ seen }}</h2>
 <h2>Current Queue</h2>
 
-<ol>
+<ul>
 {% for patient in queue %}
-<li>{{ patient.name }} - {{ patient.get_time() }}</li>
+<li>{{ loop.index }}. {{ patient.name }} - {{ patient.get_time() }}</li>
 {% endfor %}
-</ol>
+</ul>
 
 <a href="/register">Register New Patient</a>
 
