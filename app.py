@@ -10,8 +10,9 @@ def home():
     queue = queue_manager.get_queue()
     seen = queue_manager.patients_seen
     waiting = len(queue)
+    last_called = queue_manager.last_called
 
-    return render_template("index.html", queue=queue, seen=seen, waiting=waiting)
+    return render_template("index.html", queue=queue, seen=seen, waiting=waiting, last_called=last_called)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():

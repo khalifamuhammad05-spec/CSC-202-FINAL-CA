@@ -5,6 +5,7 @@ class QueueManager:
     def __init__(self):
         self.queue = deque()
         self.patients_seen = 0
+        self.last_called = None 
 
     def add_patient(self, name):
         patient = Patient(name)
@@ -12,8 +13,10 @@ class QueueManager:
 
     def next_patient(self):
         if self.queue:
+            patient = self.queue.popleft()
             self.patients_seen += 1
-            return self.queue.popleft()
+            self.last_called = patient.name
+            return patient
 
     def get_queue(self):
         return list(self.queue)
