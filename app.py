@@ -9,7 +9,9 @@ queue_manager = QueueManager()
 def home():
     queue = queue_manager.get_queue()
     seen = queue_manager.patients_seen
-    return render_template("index.html", queue=queue, seen=seen)
+    waiting = len(queue)
+
+    return render_template("index.html", queue=queue, seen=seen, waiting=waiting)
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
