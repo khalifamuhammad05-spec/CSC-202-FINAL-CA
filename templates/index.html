@@ -117,7 +117,7 @@ li{
 
 <ul>
 {% for patient in history %}
-<li>{{ loop.index }}. {{ patient }}</li>
+<li>{{ loop.index }}. {{ patient[0] }} — {{ patient[1] }}</li>
 {% endfor %}
 </ul>
 

@@ -17,7 +17,10 @@ class QueueManager:
             patient = self.queue.popleft()
             self.patients_seen += 1
             self.last_called = patient.name
-            self.history.append(patient.name)
+            from datetime import datetime
+            checkout_time = datetime.now().strftime("%I:%M %p")
+            self.history.append((patient.name, checkout_time))
+
             return patient
 
     def get_queue(self):
