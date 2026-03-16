@@ -69,6 +69,40 @@ li{
     color:#2c3e50;
 }
 
+.badge{
+    display: inline-block;
+    padding: 8px 14px;
+    background: #4da3ff;
+    color: white;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+@keyframes glow{
+    0%{
+        box-shadow:0 0 5px #4da3ff;
+    }
+    50%{
+        box-shadow:0 0 15px #4da3ff;
+    }
+    100%{
+        box-shadow:0 0 5px #4da3ff;
+    }
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 14px;
+    background:#4da3ff;
+    color:white;
+    border-radius:20px;
+    font-weight:bold;
+    font-size:18px;
+    animation:glow 2s infinite;
+}
+
+
 </style>
 
 </head>
@@ -79,12 +113,12 @@ li{
 
 <div class="card">
 <h3>Patients Waiting</h3>
-<p class="value">{{ waiting }}</p>
+<p class="value"><span class="badge">{{ waiting }}</span></p>
 </div>
 
 <div class="card">
 <h3>Patients Seen Today</h3>
-<p class="value">{{ seen }}</p>
+<p class="value"><span class="badge">{{ seen }}</span></p>
 </div>
 
 <div class="card">
@@ -154,7 +188,6 @@ function toggleHistory() {
 
 <footer style="margin-top: 20px; color:grey;">
     <p>Clinic Queue Manager</p>
-    <p>CSC 202 Final CA</p>
     <p>Developed by Usman Muhammad</p>
 </footer>
 
