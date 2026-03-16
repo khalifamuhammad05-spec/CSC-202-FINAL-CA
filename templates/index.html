@@ -44,15 +44,56 @@ li{
     padding:8px;
     border-bottom:1px solid #ddd;
 }
+
+.cards{
+    display:flex;
+    justify-content:space-around;
+    margin:20px 0;
+}
+
+.card{
+    background:#ecf0f1;
+    padding:15px;
+    border-radius:8px;
+    width:30%;
+    box-shadow:0 0 5px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.value{
+    font-size:22px;
+    font-weight:bold;
+    color:#2c3e50;
+}
+
 </style>
 
 </head>
 <body>
  <div class="container">
 <h1>Clinic Queue Manager</h1>
-<h2>Last Patient Called: {{ last_called }}</h2>
-<h2>Patients Waiting: {{ waiting }}</h2>
- <h2>Patients Seen Today: {{ seen }}</h2>
+ <div class="cards">
+
+<div class="card">
+<h3>Patients Waiting</h3>
+<p class="value">{{ waiting }}</p>
+</div>
+
+<div class="card">
+<h3>Patients Seen Today</h3>
+<p class="value">{{ seen }}</p>
+</div>
+
+<div class="card">
+<h3>Last Patient Called</h3>
+<p class="value">{{ last_called }}</p>
+</div>
+
+</div>
+
 <h2>Current Queue</h2>
   
 {% if queue %}
