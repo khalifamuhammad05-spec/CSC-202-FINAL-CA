@@ -107,8 +107,11 @@ li{
  {% else %}
  <p>No Patients Currently Waiting</p>
  {% endif %}
+
+
 <h2>Patients Seen Today History</h2>
- 
+<button onclick="toggleHistory()">Show / Hide History</button>
+<div id="historySection" style="display:none; margin-top: 10px;">
 
 {% if history %}
 
@@ -124,8 +127,10 @@ li{
 
 {% endif %}
 
- 
-<a href="/register">Register New Patient</a>
+</div>
+<a href="/register">
+    <button>Register New Patient</button>
+</a>
 
 <br><br>
 
@@ -133,5 +138,17 @@ li{
     <button>Call Next Patient</button>
 </a>
 </div>
+<script>
+function toggleHistory() {
+    var section = document.getElementById("historySection");
+
+    if(section.style.display === "none"){
+        section.style.display = "block";
+    } else {
+        section.style.display = "none";
+    }
+}
+</script>
+
 </body>
 </html>
