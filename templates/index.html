@@ -2,9 +2,53 @@
 <html>
 <head>
     <title>Clinic Queue Manager</title>
+    <style>
+body{
+    font-family: Arial, sans-serif;
+    background-color:#f4f6f8;
+    text-align:center;
+}
+
+h1{
+    color:#2c3e50;
+}
+
+.container{
+    background:white;
+    width:60%;
+    margin:auto;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+
+button{
+    padding:10px 15px;
+    border:none;
+    background:#3498db;
+    color:white;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#2980b9;
+}
+
+ul{
+    list-style:none;
+    padding:0;
+}
+
+li{
+    padding:8px;
+    border-bottom:1px solid #ddd;
+}
+</style>
+
 </head>
 <body>
-
+ <div class="container">
 <h1>Clinic Queue Manager</h1>
 <h2>Last Patient Called: {{ last_called }}</h2>
 <h2>Patients Waiting: {{ waiting }}</h2>
@@ -23,6 +67,7 @@
  <p>No Patients Currently Waiting</p>
  {% endif %}
 <h2>Patients Seen Today History</h2>
+ 
 
 {% if history %}
 
@@ -46,6 +91,6 @@
 <a href="/next">
     <button>Call Next Patient</button>
 </a>
-
+</div>
 </body>
 </html>
