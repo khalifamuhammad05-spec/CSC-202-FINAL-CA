@@ -22,7 +22,23 @@
  {% else %}
  <p>No Patients Currently Waiting</p>
  {% endif %}
+<h2>Patients Seen Today History</h2>
 
+{% if history %}
+
+<ul>
+{% for patient in history %}
+<li>{{ loop.index }}. {{ patient }}</li>
+{% endfor %}
+</ul>
+
+{% else %}
+
+<p>No patients seen yet today</p>
+
+{% endif %}
+
+ 
 <a href="/register">Register New Patient</a>
 
 <br><br>
